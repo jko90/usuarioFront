@@ -1,4 +1,76 @@
-<mat-card class="form-card" >
-  <mat-card-content>Simple card</mat-card-content>
+<mat-card class="form-card">
+  <h2> {{ seleId ? "Actualizar rol" : "Crear rol" }} </h2>
+
+  <mat-card-content>
+    <form [formGroup]="formulario">
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Nombre:</mat-label>
+        <input matInput type="text" formControlName="rolNombre">
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Sigla:</mat-label>
+        <input matInput type="text" formControlName="rolSigla">
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Fecha:</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="rolFechmodifi">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Estado:</mat-label>
+        <input matInput type="text" formControlName="rolEstado">
+      </mat-form-field>
+
+      <div class="button-group">
+        <button mat-raised-button color="primary" (click)="emitirAccion()">
+          {{ accionBoton }}
+        </button>
+        <button mat-raised-button color="warn" (click)="limpiar()">
+          Limpiar
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
 </mat-card>
+
+
+<p-card header="{{ seleId ? 'Actualizar rol' : 'Crear rol' }}">
+  <form [formGroup]="formulario">
+    <div class="flex flex-column gap-2" appearance="fill">
+      <label for="rolNombre">Nombre:</label>
+      <input pInputText id="rolNombre" formControlName="rolNombre"/>
+    </div>
+
+    <div class="flex flex-column gap-2" appearance="fill">
+      <label for="rolSigla">Siglas:</label>
+      <input pInputText id="rolSigla" formControlName="rolSigla"/>
+    </div>
+
+    <div class="flex flex-column gap-2" appearance="fill">
+      <label for="rolFechmodifi">Fecha:</label>
+      <span class="p-float-label">
+          <p-calendar id="rolFechmodifi" [showIcon]="true" formControlName="rolFechmodifi"></p-calendar>
+      </span>
+    </div>
+
+    <div class="flex flex-column gap-2" appearance="fill">
+      <label for="rolEstado">Nombre:</label>
+      <input pInputText id="rolEstado" formControlName="rolEstado"/>
+    </div>
+
+    <p-toolbar>
+      <div class="p-toolbar-group-end">
+        <p-button label="{{ accionBoton }}"  (click)="emitirAccion()"></p-button>
+        <span style="width: 5px"></span>
+        <p-button label="Limpiar"  (click)="limpiar()"></p-button>
+      </div>
+    </p-toolbar>
+  </form>
+</p-card>
+
 

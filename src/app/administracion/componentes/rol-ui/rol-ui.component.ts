@@ -44,4 +44,8 @@ export class RolUiComponent implements OnInit{
     }
   }
 
+  limpiar(){
+    this.formulario.reset();
+  }
+
 }

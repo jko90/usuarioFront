@@ -8,3 +8,8 @@ Se crea con Standalone en main.ts
  /*************************************/
  Instalar para generar la documentación: ng add @compodoc/compodoc
  Instalar angular material: ng add @angular/material
+
+ Instalar primeflex: npm install primeflex
+ Instalar primeng: npm install primeng //npm install primeng@16
+
+ Al instalar agregamos las lineas de estilo en angular.json

@@ -6,7 +6,14 @@ import { RolCreaComponent } from './paginas/rol-crea/rol-crea.component';
 import { RolListaComponent } from './paginas/rol-lista/rol-lista.component';
 import {CompartidoModule} from "../compartido/compartido.module";
 import {MaterialModule} from "../material/material.module";
-
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {AdministracionRoutingModule} from "./administracion-routing.module";
+import {MatNativeDateModule} from "@angular/material/core";
+import {CardModule} from "primeng/card";
+import {InputTextModule} from "primeng/inputtext";
+import {CalendarModule} from "primeng/calendar";
+import {ToolbarModule} from "primeng/toolbar";
 
 
 @NgModule({
@@ -14,7 +21,15 @@ import {MaterialModule} from "../material/material.module";
   imports: [
     CommonModule,
     CompartidoModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    AdministracionRoutingModule,
+    CardModule,
+    InputTextModule,
+    CalendarModule,
+    ToolbarModule
   ],
  declarations: [
    RolUiComponent,
