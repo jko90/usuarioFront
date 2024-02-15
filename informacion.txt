@@ -1,0 +1,10 @@
+Al momento de crear un proyecto sin standalone falta los siguientes archivos:
+* app.routes.ts ==> debe ser creado en la Raiz
+* aap.config.ts ==> debe ser creado en la Raiz
+
+Se crea con Standalone en main.ts
+ bootstrapApplication(AppComponent, appConfig).catch(err => console.error(err));
+
+ /*************************************/
+ Instalar para generar la documentación: ng add @compodoc/compodoc
+ Instalar angular material: ng add @angular/material

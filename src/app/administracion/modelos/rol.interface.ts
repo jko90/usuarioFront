@@ -1,4 +1,4 @@
-export interface AproRol {
+export interface rol {
   rolId: number;
   rolNombre: string;
   rolSigla: string;
