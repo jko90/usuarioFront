@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {catchError, Observable, tap, throwError} from "rxjs";
-import {rol} from "../modelos/rol.interface";
+import {usuario} from "../modelos/usuario.interface";
 
 @Injectable({
   providedIn: 'root'
 })
-export class RolService {
+export class UsuarioService {
 
   constructor(private http:HttpClient) { }
 
-  obtenerRol(): Observable<rol[]>{
-    return this.http.get<rol[]>(' ${environment.apiUrl}/rol').pipe(
-      tap((dato:rol[]) => dato),
+  obtenerUsuario(): Observable<usuario[]>{
+    return this.http.get<usuario[]>(' ${environment.apiUrl}/usuario').pipe(
+      tap((dato:usuario[]) => dato),
       catchError((err => throwError(() => err)))
     );
   }
-
 }
