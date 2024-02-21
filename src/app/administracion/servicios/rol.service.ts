@@ -27,14 +27,14 @@ export class RolService {
   }
 
   agregarRol(objRol: rol): Observable<rol> {
-    return this.http.post<rol>(`${environment.apiUrl}/rol`, objRol).pipe(
+    return this.http.post<rol>(`${environment.apiUrl}/rol/crear`, objRol).pipe(
       tap((dato: rol) => dato),
       catchError((err => throwError(() => err)))
     )
   }
 
   actualizarRol(id:number, objRol: rol):Observable<rol>{
-    return this.http.put<rol>(`${environment.apiUrl}/rol/${id}`, objRol).pipe(
+    return this.http.put<rol>(`${environment.apiUrl}/rol/actualizar/${id}`, objRol).pipe(
       tap((dato: rol) => dato),
       catchError((err => throwError(() => err)))
     )

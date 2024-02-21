@@ -13,3 +13,6 @@ Se crea con Standalone en main.ts
  Instalar primeng: npm install primeng //npm install primeng@16
 
  Al instalar agregamos las lineas de estilo en angular.json
+
+ Instalar para manejo de acciones ngrx: ng add @ngrx/store
+ Instalar para manejo de efectos ngrx: ng add @ngrx/effects

@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit} from '@angular/core';
 import {rol} from "../../modelos/rol.interface";
 import {Router} from "@angular/router";
 import {Operaciones} from "../../operaciones/operaciones.enum";
+import {RolService} from "../../servicios/rol.service";
 
 @Component({
   selector: 'app-rol-lista',
@@ -25,10 +26,14 @@ export class RolListaComponent implements OnInit {
     {cabecera: "Estado", valorCabecera: "rolEstado"}
   ]
 
-  constructor(private ruta: Router) {
+  constructor(
+    private ruta: Router,
+    private rolServ: RolService
+  ) {
   }
 
   ngOnInit(): void {
+  //  this.roles = this.rolServ.obtenerRol();
   }
 
   seleccionarRol(data:{rol : rol, action:Operaciones}) {}

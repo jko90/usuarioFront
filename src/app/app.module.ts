@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {CompartidoModule} from "./compartido/compartido.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {CabeceraInterceptor} from "./centro/interceptor/cabecera.interceptor";
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   /**
@@ -19,11 +23,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule, // CommonModules ==> falta de importar
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule, // RouterOutlet, en caso de que existiera
+    BrowserAnimationsModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]), // RouterOutlet, en caso de que existiera
   //  CompartidoModule
   ],
   /**  Declaramos los servicios que van a estar disponibles para la inyeccion de dependencias */
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass : CabeceraInterceptor, multi: true}
+  ],
   /**  Declaramos todos los componentes, directivas y pipes que van a estar disponibles a otros módulos una vez que se importe */
   exports:[
   //  CompartidoModule
