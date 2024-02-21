@@ -7,13 +7,9 @@ import { RolListaComponent } from './paginas/rol-lista/rol-lista.component';
 import {CompartidoModule} from "../compartido/compartido.module";
 import {MaterialModule} from "../material/material.module";
 import {ReactiveFormsModule} from "@angular/forms";
-import {MatDatepickerModule} from "@angular/material/datepicker";
 import {AdministracionRoutingModule} from "./administracion-routing.module";
-import {MatNativeDateModule} from "@angular/material/core";
-import {CardModule} from "primeng/card";
-import {InputTextModule} from "primeng/inputtext";
-import {CalendarModule} from "primeng/calendar";
-import {ToolbarModule} from "primeng/toolbar";
+import {PrimengModule} from "../primeng/primeng.module";
+
 
 
 @NgModule({
@@ -23,13 +19,8 @@ import {ToolbarModule} from "primeng/toolbar";
     CompartidoModule,
     MaterialModule,
     ReactiveFormsModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
     AdministracionRoutingModule,
-    CardModule,
-    InputTextModule,
-    CalendarModule,
-    ToolbarModule
+    PrimengModule
   ],
  declarations: [
    RolUiComponent,

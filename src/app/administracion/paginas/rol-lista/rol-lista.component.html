@@ -1,1 +1,3 @@
-<p>rol-lista works!</p>
+<app-barr-herramienta title=" {{ formTitulo }} "/>
+<app-rol-ui-lista [roles]="roles" [cabeceras]="cabeceras" (rols)="seleccionarRol($event)"/>
+<app-pie/>
